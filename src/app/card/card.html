@@ -1,0 +1,50 @@
+<div class="container">
+
+  <h1>🎉Countdown to Vidi's Birthday🎉</h1>
+  <p>{{days}} days to Vidi's Birthday ❤️ </p>
+
+  <div class="countdown-box">
+
+    <div class="time-card">
+      <h2>{{ days }}</h2>
+      <p>Days</p>
+    </div>
+
+    <div class="time-card">
+      <h2>{{ hours }}</h2>
+      <p>Hours</p>
+    </div>
+
+    <div class="time-card">
+      <h2>{{ minutes }}</h2>
+      <p>Minutes</p>
+    </div>
+
+    <div class="time-card">
+      <h2>{{ seconds }}</h2>
+      <p>Seconds</p>
+    </div>
+ </div>
+  
+ <div>
+    <button (click)="startCelebration()" [disabled]="tillDate" [ngClass]="tillDate? 'wait-to-celebrate-btn' : 'celebrate-btn'">
+  🎉 LET'S CELEBRATE 🎉
+</button>
+
+<div class="fall-container">
+  <div *ngFor="let item of fallingItems"
+       class="fall-item"
+       [style.left.%]="item.left"
+       [style.animationDuration.s]="item.duration">
+    {{ item.icon }}
+  </div>
+</div>
+
+
+</div>
+
+ 
+
+  <h2 class="message">{{ message }}</h2>
+
+ </div>
