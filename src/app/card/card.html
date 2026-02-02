@@ -49,4 +49,13 @@
   <h2 class="message">{{ message }}</h2>
 
  </div>
+<!-- 
+ <button class="music-btn" (click)="toggleMusic()">
+  {{ isPlaying ? '⏸ Pause Music' : '▶ Play Music' }}
+</button> -->
+
+<audio #audioPlayer loop>
+  <source src="/happy-birthday-471211.mp3" type="audio/mpeg">
+</audio>
+
 </div>

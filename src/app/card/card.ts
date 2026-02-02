@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -7,7 +7,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
   templateUrl: './card.html',
   styleUrl: './card.scss',
 })
-export class Card implements OnInit, OnDestroy {
+export class Card implements OnInit, OnDestroy , AfterViewInit  {
   
   days: number = 0;
   hours: number = 0;
@@ -21,12 +21,18 @@ export class Card implements OnInit, OnDestroy {
 
   interval: any;
   fallingItems: any[] = [];
+@ViewChild('audioPlayer') audioPlayer!: ElementRef;
 
 
   ngOnInit(): void {
     this.startCountdown();
+    
   }
 
+  ngAfterViewInit(): void {
+    this.my();
+    
+  }
   startCelebration() {
 
   this.fallingItems = [];
@@ -40,6 +46,21 @@ export class Card implements OnInit, OnDestroy {
     });
 
   }
+
+}
+
+my()
+{
+  const audio = this.audioPlayer.nativeElement;
+  audio.currentTime = 0;
+  audio.muted = false;
+  audio.volume = 1;
+  audio.currentTime = 0;
+
+  audio.play().then(() => {
+    console.log("Music playing 🎵");
+  })
+  audio.play();
 
 }
 
