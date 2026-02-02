@@ -26,6 +26,7 @@ export class Card implements OnInit, OnDestroy , AfterViewInit  {
 
   ngOnInit(): void {
     this.startCountdown();
+   
     
   }
 
@@ -51,16 +52,23 @@ export class Card implements OnInit, OnDestroy , AfterViewInit  {
 
 my()
 {
-  const audio = this.audioPlayer.nativeElement;
-  audio.currentTime = 0;
-  audio.muted = false;
-  audio.volume = 1;
-  audio.currentTime = 0;
+  // const audio = this.audioPlayer.nativeElement;
+  // audio.currentTime = 0;
+  // audio.muted = false;
+  // audio.volume = 1;
+  // audio.currentTime = 0;
 
-  audio.play().then(() => {
-    console.log("Music playing 🎵");
-  })
+  // audio.play().then(() => {
+  //   console.log("Music playing 🎵");
+  // })
+  // audio.play();
+  const audio = this.audioPlayer.nativeElement;
+
+  audio.muted = false;
+  audio.currentTime = 0;
   audio.play();
+
+  // animation
 
 }
 
