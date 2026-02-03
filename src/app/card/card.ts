@@ -62,10 +62,11 @@ btn.addEventListener("click", () => {
 
   if (!isPlaying) {
      music.play();   
-    btn.innerText = "🔇";   // mute icon
+     btn.innerText = "🔊"; 
+    // mute icon
   } else {
    music.pause();
-    btn.innerText = "🔊";   // speaker icon
+    btn.innerText = "🔇";    // speaker icon
   }
 
   isPlaying = !isPlaying;
