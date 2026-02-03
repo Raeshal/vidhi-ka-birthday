@@ -31,7 +31,7 @@ export class Card implements OnInit, OnDestroy , AfterViewInit  {
   }
 
   ngAfterViewInit(): void {
-    this.my();
+    //this.my();
     
   }
   startCelebration() {
@@ -52,25 +52,69 @@ export class Card implements OnInit, OnDestroy , AfterViewInit  {
 
 my()
 {
-  // const audio = this.audioPlayer.nativeElement;
-  // audio.currentTime = 0;
-  // audio.muted = false;
-  // audio.volume = 1;
-  // audio.currentTime = 0;
 
-  // audio.play().then(() => {
-  //   console.log("Music playing 🎵");
-  // })
-  // audio.play();
-  const audio = this.audioPlayer.nativeElement;
+const btn = document.getElementById('musicBtn')!;
+const music = document.getElementById('music') as HTMLAudioElement;
 
-  audio.muted = false;
-  audio.currentTime = 0;
-  audio.play();
+let isPlaying = false;
 
-  // animation
+btn.addEventListener("click", () => {
+
+  if (!isPlaying) {
+     music.play();   
+    btn.innerText = "🔇";   // mute icon
+  } else {
+   music.pause();
+    btn.innerText = "🔊";   // speaker icon
+  }
+
+  isPlaying = !isPlaying;
+});
+
+//   const btn = document.getElementById('playBtn')!;
+// const music = document.getElementById('music') as HTMLAudioElement;
+
+// btn.addEventListener('click', () => {
+//   music.play();
+// });
 
 }
+
+// my()
+// {
+//   // const audio = this.audioPlayer.nativeElement;
+//   // audio.currentTime = 0;
+//   // audio.muted = false;
+//   // audio.volume = 1;
+//   // audio.currentTime = 0;
+
+//   // audio.play().then(() => {
+//   //   console.log("Music playing 🎵");
+//   // })
+//   // audio.play();
+//   const audio = this.audioPlayer.nativeElement;
+
+//   audio.muted = false;
+//   audio.currentTime = 0;
+//   audio.play();
+//  //const myAudioElement = document.getElementById('playButton'); // Or document.querySelector('video');
+
+//     // Add an event listener to a button or another interactive element
+//     audio.addEventListener('click', () => {
+//         audio.play()
+//             .then(() => {
+//                 console.log('Media started playing successfully!');
+//             })
+//             .catch((error:any) => {
+//                 console.error('Failed to play media:', error);
+//                 // Handle cases where play() still fails (e.g., due to other browser restrictions)
+//             });
+//     });
+//   // animation
+
+// }
+
+
 
   startCountdown() {
 
