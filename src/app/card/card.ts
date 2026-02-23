@@ -14,10 +14,11 @@ export class Card implements OnInit, OnDestroy , AfterViewInit  {
   minutes: number = 0;
   seconds: number = 0;
   tillDate:boolean=true;
+  birthdayPerson:String='PAPA';
 
   message: string = '';
 
-  birthdayDate = new Date('February 16, 2026 00:00:00').getTime();
+  birthdayDate = new Date('February 22, 2026 00:00:00').getTime();
 
   interval: any;
   fallingItems: any[] = [];
