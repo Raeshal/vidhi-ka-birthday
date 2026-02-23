@@ -18,7 +18,7 @@ export class Card implements OnInit, OnDestroy , AfterViewInit  {
 
   message: string = '';
 
-  birthdayDate = new Date('February 22, 2026 00:00:00').getTime();
+  birthdayDate = new Date('June 22, 2026 00:00:00').getTime();
 
   interval: any;
   fallingItems: any[] = [];
